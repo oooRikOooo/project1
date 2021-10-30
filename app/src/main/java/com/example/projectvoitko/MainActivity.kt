@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import androidx.transition.FragmentTransitionSupport
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -26,8 +27,11 @@ class MainActivity : AppCompatActivity() {
 
         val bottomNavigationView  = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
-        val navController = findNavController(R.id.fragment)
-        bottomNavigationView.setupWithNavController(navController)
+        //val navController = findNavController(R.id.fragment)
+        //bottomNavigationView.setupWithNavController(navController)
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.fragment) as NavHostFragment
+        val navController = navHostFragment.navController
 
     }
     /*override fun onPrepareOptionsMenu(menu: Menu): Boolean {
