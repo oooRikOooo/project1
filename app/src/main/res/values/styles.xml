@@ -6,7 +6,13 @@
         <item name="cornerSize">50%</item>
     </style>
     
-
+    <style name="styleBottomNavigation">
+        <item name="android:background">@drawable/rounded_bottom_navigation_menu</item>
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">15dp</item>
+        <item name="itemIconTint">@color/white</item>
+        <item name="itemTextColor">@color/white</item>
+    </style>
 
 
 </resources>

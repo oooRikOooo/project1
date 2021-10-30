@@ -11,4 +11,6 @@
     <color name="greenDark">#398032</color>
     <color name="greenLight">#b8fc8d</color>
     <color name="greenNavigation">#159300</color>
+    <color name="greenCreateRegister">#398033</color>
+    <color name="greenBgLoginRegister">#B0FC81</color>
 </resources>

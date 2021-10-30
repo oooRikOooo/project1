@@ -16,8 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:cardCornerRadius="25dp"
-        app:cardElevation="10dp"
         app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="@color/greenBgLoginRegister"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/toolbar"
@@ -43,14 +43,16 @@
                 android:weightSum="2">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tvCreateAccount"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingTop="5dp"
                     android:text="@string/register"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="30dp" />
+                    android:textSize="24sp"
+                    />
 
 
             </LinearLayout>
@@ -60,49 +62,63 @@
                 android:layout_width="200dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="27dp"
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="@string/name"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:background="@drawable/bg_tv_logn_register"
+                android:paddingStart="12dp"
+                android:drawablePadding="10dp"
+                android:textSize="24sp"
+                android:drawableStart="@drawable/ic_name"
+                android:autofillHints="" />
+
 
             <EditText
                 android:id="@+id/editTextEmailAddress"
                 android:layout_width="200dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="@string/email"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:background="@drawable/bg_tv_logn_register"
+                android:paddingStart="12dp"
+                android:drawablePadding="10dp"
+                android:textSize="24sp"
+                android:drawableStart="@drawable/ic_email"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="200dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/bg_tv_logn_register"
                 android:ems="10"
                 android:hint="@string/password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:paddingStart="12dp"
+                android:textSize="24sp"
+                android:drawableStart="@drawable/ic_password"
+                android:drawablePadding="10dp"
+                android:autofillHints="" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="15dp"
-                android:text="@string/reset_password"
-                android:textSize="13dp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonCreate"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="15dp"
-                android:text="@string/action_sign_in" />
+                android:layout_marginTop="29dp"
+                android:text="@string/create"
+                android:textSize="24sp"
+
+                android:background="@drawable/button_rounded_login_register"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
