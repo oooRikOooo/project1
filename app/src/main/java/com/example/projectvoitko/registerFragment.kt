@@ -2,12 +2,15 @@ package com.example.projectvoitko
 
 import android.graphics.Typeface
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_login_register.*
 import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.toolbar_login.*
@@ -27,6 +30,9 @@ class registerFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     var navc : NavController?= null
+    private lateinit var firebaseAuth: FirebaseAuth
+    private var email = ""
+    private var password = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +62,38 @@ class registerFragment : Fragment() {
         imageButtonBack.setOnClickListener {
             navc?.navigate(R.id.action_registerFragment_to_loginRegisterFragment)
         }
+        firebaseAuth = FirebaseAuth.getInstance()
+
+        buttonCreate.setOnClickListener {
+            validateData()
+        }
+    }
+
+    private fun validateData() {
+        email = editTextEmailAddress.text.toString().trim()
+        password = editTextPassword.text.toString().trim()
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            editTextEmailAddress.error = "Invalid email format"
+        } else if(TextUtils.isEmpty(password)){
+            editTextPassword.error = "Please enter password"
+        } else if(password.length<6){
+            editTextPassword.error = "Password is short"
+        } else {
+            firebaseSignUp()
+        }
+    }
+
+    private fun firebaseSignUp() {
+        firebaseAuth.createUserWithEmailAndPassword(email,password)
+            .addOnSuccessListener {
+                //val firebaseUser = firebaseAuth.currentUser
+                //val email = firebaseUser!!.email
+                navc?.navigate(R.id.action_registerFragment_to_loginFragment2)
+            }
+            .addOnFailureListener {
+
+            }
     }
 
     companion object {

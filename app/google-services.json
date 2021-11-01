@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "888913026497",
+    "project_id": "project-garden-helper",
+    "storage_bucket": "project-garden-helper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888913026497:android:a6344a408d3b14a07a2340",
+        "android_client_info": {
+          "package_name": "com.example.projectvoitko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "888913026497-24iibj702fagb85p5sdik2gbvhotkejg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.projectvoitko",
+            "certificate_hash": "6165be334228b69d3e723b76a76ab14a5419bedb"
+          }
+        },
+        {
+          "client_id": "888913026497-ab4pndjprtthrkqliahrlqpc75b2ol3l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeGcM-4feK43_aTMc7wrTKR-J0Xk6FUo4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "888913026497-ab4pndjprtthrkqliahrlqpc75b2ol3l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

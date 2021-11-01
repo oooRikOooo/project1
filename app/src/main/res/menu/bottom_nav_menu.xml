@@ -3,19 +3,19 @@
 
     <item
         android:id="@+id/firstFragment"
-        android:title="@null"
+        android:title="@string/home"
         android:icon="@drawable/ic_home" />
     <item
         android:id="@+id/secondFragment"
-        android:title="@null"
+        android:title="@string/calendar"
         android:icon="@drawable/ic_calender"
         />
     <item
         android:id="@+id/thirdFragment"
-        android:title="@null"
+        android:title="@string/notes"
         android:icon="@drawable/ic_notes" />
     <item
         android:id="@+id/fourthFragment"
-        android:title="@null"
+        android:title="@string/settings"
         android:icon="@drawable/ic_settings" />
 </menu>

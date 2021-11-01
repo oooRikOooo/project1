@@ -72,7 +72,8 @@
                 android:drawablePadding="10dp"
                 android:textSize="24sp"
                 android:drawableStart="@drawable/ic_name"
-                android:autofillHints="" />
+                android:autofillHints=""
+                tools:ignore="RtlSymmetry" />
 
 
             <EditText
@@ -90,7 +91,8 @@
                 android:drawablePadding="10dp"
                 android:textSize="24sp"
                 android:drawableStart="@drawable/ic_email"
-                android:autofillHints="" />
+                android:autofillHints=""
+                tools:ignore="RtlSymmetry" />
 
             <EditText
                 android:id="@+id/editTextPassword"
@@ -106,7 +108,8 @@
                 android:textSize="24sp"
                 android:drawableStart="@drawable/ic_password"
                 android:drawablePadding="10dp"
-                android:autofillHints="" />
+                android:autofillHints=""
+                tools:ignore="RtlSymmetry" />
 
 
             <Button
@@ -132,8 +135,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Button"
-                    android:src="@drawable/ic_action_name"/>
+                    android:src="@drawable/ic_action_name"
+                    android:contentDescription="@string/google_authorization" />
 
                 <ImageButton
                     android:id="@+id/button3"
@@ -141,8 +144,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_weight="1"
-                    android:text="Button"
-                    android:src="@drawable/ic_facebook_logo"/>
+                    android:src="@drawable/ic_facebook_logo"
+                    android:contentDescription="@string/facebook_authorization" />
             </LinearLayout>
 
         </LinearLayout>
