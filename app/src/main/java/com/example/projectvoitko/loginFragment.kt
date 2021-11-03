@@ -14,6 +14,7 @@ import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_login_register.*
+import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.toolbar_login.*
 
 // TODO: Rename parameter arguments, choose names that match

@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_login_register.*
 import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.toolbar_login.*
@@ -33,6 +35,9 @@ class registerFragment : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private var email = ""
     private var password = ""
+    private var name = ""
+    private var mDatabaseReference:DatabaseReference?=null
+    private var mDatabase: FirebaseDatabase? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,6 +68,8 @@ class registerFragment : Fragment() {
             navc?.navigate(R.id.action_registerFragment_to_loginRegisterFragment)
         }
         firebaseAuth = FirebaseAuth.getInstance()
+        mDatabase = FirebaseDatabase.getInstance()
+        mDatabaseReference = mDatabase!!.reference.child("Users")
 
         buttonCreate.setOnClickListener {
             validateData()
@@ -72,6 +79,7 @@ class registerFragment : Fragment() {
     private fun validateData() {
         email = editTextEmailAddress.text.toString().trim()
         password = editTextPassword.text.toString().trim()
+        name = editTextName.text.toString().trim()
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             editTextEmailAddress.error = "Invalid email format"
@@ -79,6 +87,8 @@ class registerFragment : Fragment() {
             editTextPassword.error = "Please enter password"
         } else if(password.length<6){
             editTextPassword.error = "Password is short"
+        }else if(TextUtils.isEmpty(name)){
+            editTextName.error = "Please enter your name"
         } else {
             firebaseSignUp()
         }
@@ -88,6 +98,9 @@ class registerFragment : Fragment() {
         firebaseAuth.createUserWithEmailAndPassword(email,password)
             .addOnSuccessListener {
                 //val firebaseUser = firebaseAuth.currentUser
+                val userId = firebaseAuth.currentUser!!.uid
+                val currentUserDb = mDatabaseReference!!.child(userId)
+                currentUserDb.child("name").setValue(name)
                 //val email = firebaseUser!!.email
                 navc?.navigate(R.id.action_registerFragment_to_loginFragment2)
             }

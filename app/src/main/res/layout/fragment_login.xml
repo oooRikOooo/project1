@@ -17,7 +17,6 @@
         android:layout_gravity="center"
         app:cardCornerRadius="25dp"
         app:cardBackgroundColor="@color/greenBgLoginRegister"
-        app:cardElevation="10dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +44,7 @@
 
                 <TextView
                     android:id="@+id/tvLogin"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingTop="5dp"
@@ -70,9 +69,11 @@
                 android:textSize="24sp"
                 android:inputType="textEmailAddress"
                 android:background="@drawable/bg_tv_logn_register"
-                android:drawableLeft="@drawable/ic_name"
-                android:paddingLeft="12dp"
-                android:drawablePadding="10dp"/>
+                android:drawableStart="@drawable/ic_name"
+                android:paddingStart="12dp"
+                android:drawablePadding="10dp"
+                android:importantForAutofill="no"
+                tools:ignore="InefficientWeight,RtlSymmetry" />
 
             <EditText
                 android:id="@+id/editTextPassword"
@@ -85,9 +86,11 @@
                 android:hint="@string/password"
                 android:textSize="24sp"
                 android:inputType="textPassword"
-                android:drawableLeft="@drawable/ic_password"
-                android:paddingLeft="12dp"
-                android:drawablePadding="10dp"/>
+                android:drawableStart="@drawable/ic_password"
+                android:paddingStart="12dp"
+                android:drawablePadding="10dp"
+                android:importantForAutofill="no"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
                 android:id="@+id/textView"
@@ -96,7 +99,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:text="@string/reset_password"
-                android:textSize="13dp" />
+                android:textSize="13sp" />
 
             <Button
                 android:id="@+id/buttonSignIn"
@@ -120,8 +123,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Button"
-                    android:src="@drawable/ic_action_name"/>
+                    android:src="@drawable/ic_action_name"
+                    android:contentDescription="@string/google_authorization" />
 
                 <ImageButton
                     android:id="@+id/button3"
@@ -129,8 +132,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_weight="1"
-                    android:text="Button"
-                    android:src="@drawable/ic_facebook_logo"/>
+                    android:src="@drawable/ic_facebook_logo"
+                    android:contentDescription="@string/facebook_authorization" />
             </LinearLayout>
 
         </LinearLayout>

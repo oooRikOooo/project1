@@ -28,6 +28,9 @@
     <string name="notes">Notes</string>
     <string name="settings">Settings</string>
     <string name="button">Button</string>
+    <string name="logout">Logout</string>
+    <string name="account_image">Account Image</string>
+    <string name="edit_profile">Edit Profile</string>
     <string name="google_authorization">Google Authorization</string>
     <string name="facebook_authorization">Facebook Authorization</string>
 </resources>

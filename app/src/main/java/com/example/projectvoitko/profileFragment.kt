@@ -5,6 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlinx.android.synthetic.main.toolbar_profile.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +26,11 @@ class profileFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    var navc : NavController ?= null
+    //private var email = ""
+    private lateinit var firebaseAuth : FirebaseAuth
+    private var mDatabaseReference: DatabaseReference? = null
+    private var mDatabase: FirebaseDatabase? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +46,50 @@ class profileFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        firebaseAuth = FirebaseAuth.getInstance()
+        mDatabase = FirebaseDatabase.getInstance()
+        mDatabaseReference = mDatabase!!.reference.child("Users")
+        navc = Navigation.findNavController(view)
+        checkUser()
+        val firebaseUser = firebaseAuth.currentUser
+        val mUserReference = mDatabaseReference!!.child(firebaseUser!!.uid)
+        mUserReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                textViewNameProfile!!.text = snapshot.child("name").value as String
+
+            }
+            override fun onCancelled(databaseError: DatabaseError) {}
+        })
+
+        imageButtonLogout.setOnClickListener {
+            firebaseAuth.signOut()
+            checkUser()
+        }
+
+
+
+    }
+
+    private fun checkUser() {
+        val firebaseUser = firebaseAuth.currentUser
+        //textViewLogout.text = firebaseUser.toString()
+
+        if(firebaseUser != null){
+            val email = firebaseUser.email
+            //val name = firebaseUser.displayName
+
+            textViewEmailProfile.text = email
+            //textViewNameProfile!!.text =
+            //textViewLogout.text = email
+        } else {
+            //textViewLogout.text = "Out"
+            navc?.navigate(R.id.action_profileFragment_to_loginFragment22)
+        }
+
     }
 
     companion object {
