@@ -33,4 +33,14 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="google_authorization">Google Authorization</string>
     <string name="facebook_authorization">Facebook Authorization</string>
+    <string name="yourName">Ім\'я</string>
+    <string name="yourSurname">Фамілія</string>
+    <string name="enter">Введіть...</string>
+    <string name="aboutyourself">Про себе...</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="nik">Нік</string>
+    <string name="change_photo">Change photo</string>
+    <string name="_70">70</string>
+    <string name="space">" "</string>
 </resources>

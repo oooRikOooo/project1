@@ -13,4 +13,5 @@
     <color name="greenNavigation">#159300</color>
     <color name="greenCreateRegister">#398033</color>
     <color name="greenBgLoginRegister">#B0FC81</color>
+    <color name="editTextLineGreen">#2FDE03</color>
 </resources>

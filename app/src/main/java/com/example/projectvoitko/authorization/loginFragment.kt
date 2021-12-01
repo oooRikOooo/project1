@@ -1,4 +1,4 @@
-package com.example.projectvoitko
+package com.example.projectvoitko.authorization
 
 import android.graphics.Typeface
 import android.os.Bundle
@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.example.projectvoitko.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_login_register.*
