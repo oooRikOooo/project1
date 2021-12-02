@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_secondFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_secondFragment_to_newEventFragment"
+            app:destination="@id/newEventFragment" />
     </fragment>
     <fragment
         android:id="@+id/thirdFragment"
@@ -151,5 +154,14 @@
         <action
             android:id="@+id/action_editAboutFragment_to_editProfileFragment"
             app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newEventFragment"
+        android:name="com.example.projectvoitko.MainFragments.SecondFragmentElements.NewEventFragment"
+        android:label="fragment_new_event"
+        tools:layout="@layout/fragment_new_event" >
+        <action
+            android:id="@+id/action_newEventFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
     </fragment>
 </navigation>

@@ -78,6 +78,7 @@ class profileFragment : Fragment() {
         }
 
         imageButtonLogout.setOnClickListener {
+
             firebaseAuth.signOut()
             checkUser()
         }

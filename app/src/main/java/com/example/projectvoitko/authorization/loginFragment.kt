@@ -18,15 +18,8 @@ import kotlinx.android.synthetic.main.fragment_login_register.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.toolbar_login.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 class loginFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
     var navc : NavController?= null
     private lateinit var firebaseAuth: FirebaseAuth
     private var email = ""
@@ -34,10 +27,6 @@ class loginFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -55,6 +44,8 @@ class loginFragment : Fragment() {
         editTextEmailAddress.typeface = typeface
         editTextPassword.typeface = typeface
         tvLogin.typeface = typeface
+
+        cardViewLogin.visibility = View.GONE
         navc = Navigation.findNavController(view)
         imageButtonBack.setOnClickListener {
             navc?.navigate(R.id.action_loginFragment2_to_loginRegisterFragment)
@@ -64,8 +55,14 @@ class loginFragment : Fragment() {
         checkUser()
 
         buttonSignIn.setOnClickListener {
+            progressRLLogin.visibility = View.VISIBLE
             validateData()
+            progressRLLogin.visibility = View.GONE
+            cardViewLogin.visibility = View.VISIBLE
         }
+
+        cardViewLogin.visibility = View.VISIBLE
+        progressRLLogin.visibility = View.GONE
     }
 
     private fun validateData() {
@@ -77,6 +74,8 @@ class loginFragment : Fragment() {
         } else if (TextUtils.isEmpty(password)){
             editTextPassword.error = "Please enter password"
         } else {
+            progressRLLogin.visibility = View.GONE
+            cardViewLogin.visibility = View.VISIBLE
             firebaseLogin()
         }
     }
@@ -101,15 +100,5 @@ class loginFragment : Fragment() {
         }
     }
 
-    companion object {
 
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            loginFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

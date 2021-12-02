@@ -14,4 +14,5 @@
     <color name="greenCreateRegister">#398033</color>
     <color name="greenBgLoginRegister">#B0FC81</color>
     <color name="editTextLineGreen">#2FDE03</color>
+    <color name="calendarElements">#0F9033</color>
 </resources>

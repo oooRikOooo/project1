@@ -23,9 +23,6 @@ import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.toolbar_login.*
 
 class registerFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
     var navc : NavController?= null
     private lateinit var firebaseAuth: FirebaseAuth
     private var email = ""

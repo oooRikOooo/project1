@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">projectVoitko</string>
+    <string name="app_name">Garden Helper</string>
     <string name="favourites">Favourites</string>
     <string name="account">Account</string>
     <string name="back">Back</string>
@@ -43,4 +43,8 @@
     <string name="change_photo">Change photo</string>
     <string name="_70">70</string>
     <string name="space">" "</string>
+    <string name="add_title">Добавте назву</string>
+    <string name="add_additional_info">Додати додаткову інформацію</string>
+    <string name="isImportant">Важливість виконання</string>
+    <string name="set_date">Вкажіть дату</string>
 </resources>
