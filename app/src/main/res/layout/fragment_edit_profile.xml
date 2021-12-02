@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="Profile.EditProfileFragment">
+
+    <include
+        android:id="@+id/toolbarEditProfile"
+        layout="@layout/toolbar_edit_profile"
+        app:layout_constraintBottom_toTopOf="@+id/mainLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarEditProfile">
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="18dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="end|top"
+                android:clickable="true"
+                android:contentDescription="@string/change_photo"
+                android:focusable="true"
+                android:scaleType="center"
+                app:fabCustomSize="48dp"
+                app:tint="@color/white"
+                tools:src="@drawable/ic_name_camera" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewEditProfile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#B0FC81"
+                app:cardCornerRadius="25dp">
+
+
+                <ImageView
+                    android:id="@+id/imageViewProfile"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    tools:src="@tools:sample/avatars" />
+            </androidx.cardview.widget.CardView>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:text="@string/yourName"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:text=" "
+                android:background="@drawable/textview_bottom_line_green"
+                android:clickable="true"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+            <!--<EditText
+                android:id="@+id/editTextEditName"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:backgroundTint="@color/editTextLineGreen"
+
+                android:hint="@string/enter"
+                android:inputType="textPersonName" />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nik"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewNickName"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:text=" "
+                android:clickable="true"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:background="@drawable/textview_bottom_line_green"/>
+
+            <!--<EditText
+                android:id="@+id/edittextEditSurname"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:backgroundTint="@color/editTextLineGreen"
+                android:hint="@string/enter" />-->
+        </LinearLayout>
+
+
+        <!--<androidx.cardview.widget.CardView
+            android:layout_width="343dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            app:cardBackgroundColor="#2FDE03"
+            app:cardCornerRadius="12dp">-->
+
+            <TextView
+                android:id="@+id/textViewAbout"
+                android:layout_width="343dp"
+                android:layout_height="100dp"
+                android:maxLength="70"
+                android:padding="9dp"
+                android:layout_marginTop="30dp"
+                android:hint="@string/_70"
+                android:text="@string/space"
+                android:clickable="true"
+                android:background="@drawable/rounded_textview"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+           <!-- <EditText
+                android:id="@+id/editTextAbout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:background="@drawable/bg_tv_logn_register"
+                android:ems="10"
+                android:gravity="start"
+                android:hint="@string/_70"
+                android:maxLength="70"
+                android:padding="9dp"
+                android:textSize="14sp" />-->
+        <!--</androidx.cardview.widget.CardView>-->
+
+        <Button
+            android:id="@+id/buttonSaveChanges"
+            android:layout_width="165dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/button_save_cancel"
+            android:text="@string/save" />
+
+        <Button
+            android:id="@+id/buttonCancelChanges"
+            android:layout_width="165dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_save_cancel"
+            android:text="@string/cancel" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/progressRLEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ProgressBar
+            android:id="@+id/progressBarEditProfile"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+    <!--<androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>
